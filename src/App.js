@@ -1,7 +1,10 @@
+import GlobalStyle, { Container } from "./styles/globalStyles";
+
 function App() {
   return (
-    <div>
-    </div>
+    <Container>
+      <GlobalStyle />
+    </Container>
   );
 }
 
