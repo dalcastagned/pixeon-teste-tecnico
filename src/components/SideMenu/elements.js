@@ -13,7 +13,7 @@ export const Container = styled.div`
     display: flex;
 
     img {
-        width: 159px;
-        padding: 30px 0 20px 0;
+        width: 210px;
+        padding: 30px 0 70px 0;
     }
 `
