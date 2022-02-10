@@ -10,12 +10,7 @@ export const Container = styled.div`
     border-radius: 16px;
     display: flex;
     position: relative;
-`
-
-export const BorderLeft = styled.span`
-    width: 16px;
-    border-radius: 16px 0 0 16px;
-    background:  ${({ color }) => color};
+    border-left: 16px solid ${({ color }) => color};
 `
 
 export const Information = styled.div`
@@ -93,7 +88,7 @@ export const ClockIcon = styled(ClockFill)`
 
 export const ArrowRight = styled(ChevronRight)`
     position: absolute;
-    right: 40px;
+    right: 30px;
     top: 50%;
     transform: translatey(-50%);
     color: ${({ color }) => color};

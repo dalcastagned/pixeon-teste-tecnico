@@ -19,9 +19,9 @@ const Scheduling = () => {
                 </S.VieAllSchedualings>
             </S.SchedulingHeader>
             <S.SchedulingList>
-                <SchedualingCard color='#4CBC9A' title='Exames do servidor C' date='5 de Janeiro, 2021' hour='10H - 12H' description='Nesse Agendamento contem todos os exames do tipo C' />
-                <SchedualingCard color='#FEC64F' title='Exames do servidor B' date='5 de Janeiro, 2021' hour='13H - 15H' description='Nesse Agendamento contem todos os exames do tipo B' />
-                <SchedualingCard color='#FC6B57' title='Exames do servidor A' date='5 de Janeiro, 2021' hour='7H - 9H' description='Nesse Agendamento contem todos os exames do tipo A' />
+                <SchedualingCard status='done' title='Exames do servidor C' date='5 de Janeiro, 2021' hour='10H - 12H' description='Nesse Agendamento contem todos os exames do tipo C' />
+                <SchedualingCard status='waiting' title='Exames do servidor B' date='5 de Janeiro, 2021' hour='13H - 15H' description='Nesse Agendamento contem todos os exames do tipo B' />
+                <SchedualingCard status='error' title='Exames do servidor A' date='5 de Janeiro, 2021' hour='7H - 9H' description='Nesse Agendamento contem todos os exames do tipo A' />
             </S.SchedulingList>
         </S.Container>
     )
