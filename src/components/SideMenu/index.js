@@ -13,17 +13,13 @@ const SideMenu = () => {
 
     const { pathname } = useLocation()
 
-    if (pathname === '/') {
-        return null
-    } else {
-        return (
-            <S.Container>
-                <img src={logo} alt='Logo' />
-                <ButtonMenu route='/agendamento' icon={<CalendarFill />} text='Agendamento' active={pathname === '/agendamento'} />
-                <ButtonMenu route='/todos-agendamentos' icon={<ActivityOutline />} text='Todos os Agendamentos' active={pathname === '/todos-agendamentos'} />
-            </S.Container>
-        )
-    }
+    return (
+        <S.Container>
+            <img src={logo} alt='Logo' />
+            <ButtonMenu route='/agendamento' icon={<CalendarFill />} text='Agendamento' active={pathname === '/agendamento'} />
+            <ButtonMenu route='/todos-agendamentos' icon={<ActivityOutline />} text='Todos os Agendamentos' active={pathname === '/todos-agendamentos'} />
+        </S.Container>
+    )
 };
 
 export default SideMenu;
