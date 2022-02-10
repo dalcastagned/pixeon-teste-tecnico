@@ -1,8 +1,17 @@
 import React from 'react';
+import moment from 'moment';
+import 'moment/locale/pt-br'
 
 import * as S from './elements'
 
-const SchedualingCard = ({ status, title, date, hour, description }) => {
+const SchedualingCard = ({
+    status,
+    title,
+    day,
+    initialHour,
+    finalHour,
+    description
+}) => {
 
     const color = (
         status === "done"
@@ -18,8 +27,8 @@ const SchedualingCard = ({ status, title, date, hour, description }) => {
             <S.Information>
                 <S.InformationTop>
                     <S.Title>{title}</S.Title>
-                    <S.Date><S.CalendarIcon />{date}</S.Date>
-                    <S.Hour><S.ClockIcon />{hour}</S.Hour>
+                    <S.Date><S.CalendarIcon />{moment(day).format('D [de] MMMM, YYYY')}</S.Date>
+                    <S.Hour><S.ClockIcon />{`${initialHour}H - ${finalHour}H`}</S.Hour>
                 </S.InformationTop>
                 <S.InformationBottom>
                     <S.IconDescription />
