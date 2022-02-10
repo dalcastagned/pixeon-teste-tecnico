@@ -1,17 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState, Children } from 'react';
+import toast from 'react-hot-toast';
 
 import MonitoringDashboard from '../../components/MonitoringDashboard';
 import SchedualingCard from '../../components/SchedulingCard';
+import { getInfo } from '../../services/Api';
 import * as S from './elements'
 
 const Scheduling = () => {
+
+    const [scheduling, setScheduling] = useState([])
+    let percentageDone = (
+        scheduling.filter(item => item.status !== 'waiting').length
+        /
+        scheduling.length
+    ) * 100
+    let percentageWaiting = (
+        scheduling.filter(item => item.status === 'waiting').length
+        /
+        scheduling.length
+    ) * 100
+
+    useEffect(() => {
+        getInfo("/agendamentos")
+            .then((data) => {
+                setScheduling(data)
+            })
+            .catch(() => {
+                toast.error('Erro ao buscar dados')
+            });
+    }, []);
 
     return (
         <S.Container>
             <S.Title>Exames Concluídos/Andamento</S.Title>
             <S.Monitoring>
-                <MonitoringDashboard percentage={70} color='#4CBC9A' title='Concluido' />
-                <MonitoringDashboard percentage={50} color='#FEC64F' title='Em Andamento' />
+                <MonitoringDashboard percentage={percentageDone.toFixed(1)} color='#4CBC9A' title='Concluido' />
+                <MonitoringDashboard percentage={percentageWaiting.toFixed(1)} color='#FEC64F' title='Em Andamento' />
             </S.Monitoring>
             <S.SchedulingHeader>
                 <h2>Listagem de Agendamentos</h2>
@@ -20,9 +44,16 @@ const Scheduling = () => {
                 </S.VieAllSchedualings>
             </S.SchedulingHeader>
             <S.SchedulingList>
-                <SchedualingCard status='done' title='Exames do servidor C' day='2021-01-05' initialHour='10' finalHour='12' description='Nesse Agendamento contem todos os exames do tipo C' />
-                <SchedualingCard status='waiting' title='Exames do servidor B' day='2021-01-05' initialHour='13' finalHour='15' description='Nesse Agendamento contem todos os exames do tipo B' />
-                <SchedualingCard status='error' title='Exames do servidor A' day='2021-01-05' initialHour='7' finalHour='9' description='Nesse Agendamento contem todos os exames do tipo A' />
+                {Children.toArray(scheduling.slice(0, 5).map(item => (
+                    <SchedualingCard
+                        status={item.status}
+                        title={item.title}
+                        day={item.day}
+                        initialHour={item.initialHour}
+                        finalHour={item.finalHour}
+                        description={item.description}
+                    />
+                )))}
             </S.SchedulingList>
         </S.Container>
     )
