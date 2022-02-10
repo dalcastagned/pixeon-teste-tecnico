@@ -15,8 +15,8 @@ export const Container = styled.div`
         font-size: 36px;
         line-height: 54px;
         color: #374557;    
-        text-align: center;
-        padding-left: 60px;
+        text-align: left;
+        padding-left: 40px;
         width: 355px;
     }
     
