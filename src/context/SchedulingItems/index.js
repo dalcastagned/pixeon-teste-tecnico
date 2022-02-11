@@ -9,23 +9,24 @@ export const SchedulingProvider = ({ children }) => {
     
     const [scheduling, setScheduling] = useState([])
     const [filteredData, setFilteredData] = useState([])
+    const [filteredSearch, setFilteredSearch] = useState([])
     
     let percentageDone = (
-        filteredData.length
-        && filteredData
+        filteredSearch.length
+        && filteredSearch
             .filter(item => item.status !== 'waiting')
             .length
         /
-        filteredData.length
+        filteredSearch.length
     ) * 100
 
     let percentageWaiting = (
-        filteredData.length
-        && filteredData
+        filteredSearch.length
+        && filteredSearch
             .filter(item => item.status === 'waiting')
             .length
         /
-        filteredData.length
+        filteredSearch.length
     ) * 100
 
     useEffect(() => {
@@ -33,12 +34,13 @@ export const SchedulingProvider = ({ children }) => {
             .then((data) => {
                 setScheduling(data)
                 setFilteredData(data)
+                setFilteredSearch(data)
             })
             .catch(() => {
                 toast.error('Erro ao buscar dados')
             });
     }, []);
-
+    
     return (
         <SchedulingContext.Provider
             value={{
@@ -47,7 +49,9 @@ export const SchedulingProvider = ({ children }) => {
                 filteredData: filteredData,
                 setFilteredData: setFilteredData,
                 percentageDone: percentageDone,
-                percentageWaiting: percentageWaiting
+                percentageWaiting: percentageWaiting,
+                filteredSearch: filteredSearch,
+                setFilteredSearch: setFilteredSearch
             }}
         >
             {children}

@@ -12,7 +12,8 @@ const Scheduling = () => {
 
     const {
         scheduling,
-        filteredData,
+        filteredSearch,
+        setFilteredSearch,
         setFilteredData,
         percentageDone,
         percentageWaiting
@@ -64,7 +65,7 @@ const Scheduling = () => {
                     </S.VieAllSchedualings>
                 </S.SchedulingHeader>
                 <S.SchedulingList>
-                    {Children.toArray(filteredData.slice(0, 5).map(item => (
+                    {Children.toArray(filteredSearch.slice(0, 5).map(item => (
                         <SchedualingCard
                             status={item.status}
                             title={item.title}
