@@ -3,7 +3,6 @@ import { ChevronRight, ChevronLeft } from '@styled-icons/boxicons-regular';
 
 export const Container = styled.div`
     width: 354px;
-    height: 340px;
 `
 
 export const Title = styled.h1`
@@ -70,7 +69,11 @@ export const Weekday = styled.li`
         (scheduling || waiting)
             ? '#fff'
             : '#374557'
-    };    
+    };   
+    
+    &:hover{
+        transform: scale(1.1);
+    } 
 `
 
 export const Weekend = styled.li`
@@ -86,6 +89,10 @@ export const Weekend = styled.li`
     line-height: 40px;
     margin: 5px 5px;
     cursor: pointer;
+    
+    &:hover{
+        transform: scale(1.1);
+    }
 `
 
 export const NextMouth = styled.li`
@@ -112,4 +119,16 @@ export const ArrowLeft = styled(ChevronLeft)`
     color: #A098AE;
     height: 25px;
     padding-right: 40px;
+`
+
+export const RemoveFilter = styled.p`
+    font-size: 16px;
+    text-align: center;
+    color: #1877f2;
+    padding-top: 5px;
+    cursor: pointer;
+
+    &:hover{
+        transform: scale(1.1);
+    }
 `

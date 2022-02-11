@@ -10,26 +10,49 @@ import Calendar from '../../components/Calendar';
 const Scheduling = () => {
 
     const [scheduling, setScheduling] = useState([])
+    const [filteredData, setFilteredData] = useState([])
+    const [filterDay, setFilterDay] = useState('')
+
+    console.log(filterDay)
+
     let percentageDone = (
-        scheduling.filter(item => item.status !== 'waiting').length
+        filteredData.length
+        && filteredData
+            .filter(item => item.status !== 'waiting')
+            .length
         /
-        scheduling.length
+        filteredData.length
     ) * 100
     let percentageWaiting = (
-        scheduling.filter(item => item.status === 'waiting').length
+        filteredData.length
+        && filteredData
+            .filter(item => item.status === 'waiting')
+            .length
         /
-        scheduling.length
+        filteredData.length
     ) * 100
 
     useEffect(() => {
         getInfo("/agendamentos")
             .then((data) => {
                 setScheduling(data)
+                setFilteredData(data)
             })
             .catch(() => {
                 toast.error('Erro ao buscar dados')
             });
     }, []);
+
+
+    useEffect(() => {
+        if (filterDay !==  '') {
+            setFilteredData(scheduling
+                .filter(item => item.day === `2021-01-${filterDay}`)
+            )
+        } else{
+            setFilteredData(scheduling)
+        }
+    }, [filterDay]);
 
     return (
         <S.Container>
@@ -46,7 +69,7 @@ const Scheduling = () => {
                     </S.VieAllSchedualings>
                 </S.SchedulingHeader>
                 <S.SchedulingList>
-                    {Children.toArray(scheduling.slice(0, 5).map(item => (
+                    {Children.toArray(filteredData.slice(0, 5).map(item => (
                         <SchedualingCard
                             status={item.status}
                             title={item.title}
@@ -61,7 +84,7 @@ const Scheduling = () => {
             <S.ContainerRight>
                 <S.Title>Calendário</S.Title>
                 <S.ContainerCalendar>
-                    <Calendar data={scheduling} />
+                    <Calendar setFilterDay={setFilterDay} data={scheduling} />
                 </S.ContainerCalendar>
             </S.ContainerRight>
         </S.Container>

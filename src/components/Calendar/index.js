@@ -2,7 +2,7 @@ import React, { Children } from 'react'
 
 import * as S from './elements'
 
-const Calendar = ({ data }) => {
+const Calendar = ({ data, setFilterDay }) => {
 
     const days = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
 
@@ -24,6 +24,7 @@ const Calendar = ({ data }) => {
                     if (day === '07' || day === '14' || day === '21' || day === '28') {
                         return (
                             <S.Weekend
+                                onClick={() => setFilterDay(day)}
                                 scheduling={(data
                                     .filter(item => item.day === `2021-01-${day}`)
                                     .filter(item => item.status !== 'waiting'))
@@ -40,6 +41,7 @@ const Calendar = ({ data }) => {
                     } else {
                         return (
                             <S.Weekday
+                                onClick={() => setFilterDay(day)}
                                 scheduling={(data
                                     .filter(item => item.day === `2021-01-${day}`)
                                     .filter(item => item.status !== 'waiting'))
@@ -59,6 +61,7 @@ const Calendar = ({ data }) => {
                 <S.NextMouth>3</S.NextMouth>
                 <S.NextMouth>4</S.NextMouth>
             </S.Days>
+            <S.RemoveFilter onClick={() => setFilterDay('')}>Remover Filtro de Data</S.RemoveFilter>
         </S.Container>
     )
 }
