@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
@@ -15,17 +15,25 @@ const TopBar = () => {
     } = useContext(SchedulingContext)
     const { pathname } = useLocation()
     const title = (pathname === '/agendamento' ? 'Agendamento' : pathname === '/todos-agendamentos' && 'Todos os Agendamentos')
+    const [showLogout, setShowLogout] = useState(false)
 
-        return (
-            <S.Container>
-                <h1>{title}</h1>
-                <SearchBar
+    return (
+        <S.Container>
+            <h1>{title}</h1>
+            <SearchBar
                 sourceList={filteredData}
                 setList={setFilteredSearch}
                 placeholder='Digite para pesquisar'
-                />
-            </S.Container>
-        )
+            />
+            <S.User onClick={() => setShowLogout(!showLogout)} />
+            {showLogout &&
+                < S.MenuLogout to='/'>
+                    <S.LogoutIcon />
+                    Logout
+                </S.MenuLogout>
+            }
+        </S.Container >
+    )
 };
 
 export default TopBar;
