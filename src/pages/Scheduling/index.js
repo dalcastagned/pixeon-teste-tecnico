@@ -4,14 +4,16 @@ import toast from 'react-hot-toast';
 import { getInfo } from '../../services/Api';
 import MonitoringDashboard from '../../components/MonitoringDashboard';
 import SchedualingCard from '../../components/SchedulingCard';
-import * as S from './elements'
 import Calendar from '../../components/Calendar';
+import Alert from '../../components/Alert';
+import * as S from './elements'
 
 const Scheduling = () => {
 
     const [scheduling, setScheduling] = useState([])
     const [filteredData, setFilteredData] = useState([])
     const [filterDay, setFilterDay] = useState('')
+    const [activeAlert, setActiveAlert] = useState(false)
 
     console.log(filterDay)
 
@@ -45,12 +47,21 @@ const Scheduling = () => {
 
 
     useEffect(() => {
-        if (filterDay !==  '') {
+        if (filterDay !== '') {
             setFilteredData(scheduling
                 .filter(item => item.day === `2021-01-${filterDay}`)
             )
-        } else{
+        } else {
             setFilteredData(scheduling)
+        }
+
+        if (filterDay !== '' && scheduling
+            .filter(item => item.day === `2021-01-${filterDay}`)
+            .length === 0
+        ) {
+            setActiveAlert(true)
+        } else {
+            setActiveAlert(false)
         }
     }, [filterDay]);
 
@@ -86,6 +97,7 @@ const Scheduling = () => {
                 <S.ContainerCalendar>
                     <Calendar setFilterDay={setFilterDay} data={scheduling} />
                 </S.ContainerCalendar>
+                <Alert active={activeAlert} setActiveAlert={setActiveAlert} />
             </S.ContainerRight>
         </S.Container>
     )

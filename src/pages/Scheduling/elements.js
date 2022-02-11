@@ -15,13 +15,14 @@ export const ContainerRight = styled.div`
 `
 
 export const ContainerCalendar = styled.div`
-    width: 772px;
+    width: 722px;
     height: 404px;
     background: #fff;
     border-radius: 16px;
     display: flex;
     align-items: center;
     padding: 20px;
+    margin-bottom: 40px;
 `
 
 export const Title = styled.h2`  
