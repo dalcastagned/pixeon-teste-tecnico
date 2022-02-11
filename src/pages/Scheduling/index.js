@@ -1,7 +1,6 @@
-import React, { useEffect, useState, Children } from 'react';
-import toast from 'react-hot-toast';
+import React, { useEffect, useState, Children, useContext } from 'react';
 
-import { getInfo } from '../../services/Api';
+import { SchedulingContext } from '../../context/SchedulingItems';
 import MonitoringDashboard from '../../components/MonitoringDashboard';
 import SchedualingCard from '../../components/SchedulingCard';
 import Calendar from '../../components/Calendar';
@@ -11,8 +10,13 @@ import * as S from './elements'
 
 const Scheduling = () => {
 
-    const [scheduling, setScheduling] = useState([])
-    const [filteredData, setFilteredData] = useState([])
+    const {
+        scheduling,
+        filteredData,
+        setFilteredData,
+        percentageDone,
+        percentageWaiting
+    } = useContext(SchedulingContext)
     const [filterDay, setFilterDay] = useState('')
     const [activeAlert, setActiveAlert] = useState(false)
     const percentageDisk = 55
@@ -25,36 +29,6 @@ const Scheduling = () => {
                     ? '#FEC64F'
                     : '#FC6B57'
     )
-
-    let percentageDone = (
-        filteredData.length
-        && filteredData
-            .filter(item => item.status !== 'waiting')
-            .length
-        /
-        filteredData.length
-    ) * 100
-    
-    let percentageWaiting = (
-        filteredData.length
-        && filteredData
-            .filter(item => item.status === 'waiting')
-            .length
-        /
-        filteredData.length
-    ) * 100
-
-    useEffect(() => {
-        getInfo("/agendamentos")
-            .then((data) => {
-                setScheduling(data)
-                setFilteredData(data)
-            })
-            .catch(() => {
-                toast.error('Erro ao buscar dados')
-            });
-    }, []);
-
 
     useEffect(() => {
         if (filterDay !== '') {
