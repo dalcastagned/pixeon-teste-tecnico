@@ -23,6 +23,7 @@ export const ContainerCalendar = styled.div`
     align-items: center;
     padding: 20px;
     margin-bottom: 40px;
+    gap: 30px;
 `
 
 export const Title = styled.h2`  
@@ -74,4 +75,57 @@ export const SchedulingList = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
+`
+
+export const ContainerRange = styled.div`
+    width: 272px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+export const TitleRange = styled.h2`
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: #A098AE;
+    text-align: center;
+    padding-bottom: 10px;
+`
+
+export const InfoRange = styled.p`
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #A098AE;
+    padding-top: 10px;
+`
+
+export const Subtitles = styled.ul`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 164px;
+    margin-top: 30px;
+    gap: 8px;
+
+    li {
+        list-style: none;
+        text-align: left;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        color: #A098AE;
+        display: flex;
+        align-items: center;
+    }
+`
+
+export const Circle = styled.div`
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 3px solid ${({color}) => color};
+    border-radius: 50%;
+    margin-right: 8px;
 `

@@ -6,6 +6,7 @@ import MonitoringDashboard from '../../components/MonitoringDashboard';
 import SchedualingCard from '../../components/SchedulingCard';
 import Calendar from '../../components/Calendar';
 import Alert from '../../components/Alert';
+import Range from '../../components/Range';
 import * as S from './elements'
 
 const Scheduling = () => {
@@ -14,8 +15,16 @@ const Scheduling = () => {
     const [filteredData, setFilteredData] = useState([])
     const [filterDay, setFilterDay] = useState('')
     const [activeAlert, setActiveAlert] = useState(false)
-
-    console.log(filterDay)
+    const percentageDisk = 55
+    const colorRange = (
+        percentageDisk <= 30
+            ? '#4CBC9A'
+            : (percentageDisk > 30 && percentageDisk <= 60)
+                ? '#FFBABF'
+                : (percentageDisk > 60 && percentageDisk <= 80)
+                    ? '#FEC64F'
+                    : '#FC6B57'
+    )
 
     let percentageDone = (
         filteredData.length
@@ -25,6 +34,7 @@ const Scheduling = () => {
         /
         filteredData.length
     ) * 100
+    
     let percentageWaiting = (
         filteredData.length
         && filteredData
@@ -96,6 +106,17 @@ const Scheduling = () => {
                 <S.Title>Calendário</S.Title>
                 <S.ContainerCalendar>
                     <Calendar setFilterDay={setFilterDay} data={scheduling} />
+                    <S.ContainerRange>
+                        <S.TitleRange>Monitoramento do Storage</S.TitleRange>
+                        <Range percentage={percentageDisk} colorRange={colorRange} />
+                        <S.InfoRange>Aqui é possível visualizar o total em disco do servidor na nuvem</S.InfoRange>
+                        <S.Subtitles>
+                            <li><S.Circle color='#4CBC9A' />Normal</li>
+                            <li><S.Circle color='#FFBABF' />Atenção</li>
+                            <li><S.Circle color='#FEC64F' />Alerta</li>
+                            <li><S.Circle color='#FC6B57' />Crítico</li>
+                        </S.Subtitles>
+                    </S.ContainerRange>
                 </S.ContainerCalendar>
                 <Alert active={activeAlert} setActiveAlert={setActiveAlert} />
             </S.ContainerRight>
