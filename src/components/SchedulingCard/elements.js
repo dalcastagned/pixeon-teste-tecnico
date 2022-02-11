@@ -6,7 +6,7 @@ import { ChevronRight } from '@styled-icons/boxicons-regular';
 export const Container = styled.div`
     width: 722px;
     height: 96px;
-    background: #FFFFFF;
+    background:  ${({theme}) => theme.primaryBackground};
     border-radius: 16px;
     display: flex;
     position: relative;
@@ -34,7 +34,7 @@ export const Title = styled.div`
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
-    color: #374557;
+    color: ${({theme}) => theme.title};
     width: 250px;
 `
 
@@ -42,7 +42,7 @@ export const Date = styled.div`
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: #A098AE;
+    color: ${({theme}) => theme.textColor};
     display: flex;
     align-items: center;
 `
@@ -51,7 +51,7 @@ export const Hour = styled.div`
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: #A098AE;
+    color: ${({theme}) => theme.textColor};
     display: flex;
     align-items: center;
 `
@@ -62,7 +62,7 @@ export const Description = styled.div`
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: #A098AE;
+    color: ${({theme}) => theme.textColor};
 `
 
 export const IconDescription = styled.span`
@@ -75,14 +75,14 @@ export const IconDescription = styled.span`
 
 export const CalendarIcon = styled(CalendarFill)`
     height: 14px;
-    color: #A098AE;
+    color: ${({theme}) => theme.textColor};
     padding-left: 45px;
     padding-right: 9px;
 `
 
 export const ClockIcon = styled(ClockFill)`
     height: 14px;
-    color: #A098AE;
+    color: ${({theme}) => theme.textColor};
     padding-left: 45px;
     padding-right: 9px;
 `

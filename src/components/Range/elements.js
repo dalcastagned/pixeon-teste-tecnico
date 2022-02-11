@@ -34,7 +34,7 @@ export const Mask = styled.div`
     right: 30px;
     left: 30px;
     height: 120px;
-    background-color: #fff;
+    background-color: ${({theme}) => theme.primaryBackground};
     border-radius: 190px 190px 0 0;
 `
 
@@ -49,7 +49,7 @@ export const Value = styled.span`
     font-weight: 600;
     font-size: 36px;
     line-height: 54px;
-    color: #374557;
+    color: ${({theme}) => theme.title};
     gap: 9px;
     
     i{

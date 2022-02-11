@@ -12,7 +12,7 @@ export const Title = styled.h1`
     font-weight: bold;
     font-size: 24px;
     line-height: 36px;
-    color: #374557;
+    color: ${({theme}) => theme.title};
 
     span {
         color: #A098AE;
@@ -65,10 +65,10 @@ export const Weekday = styled.li`
                     ? '#FEC64F'
                     : 'transparent'
     };
-    color: ${({ scheduling, waiting }) =>
+    color: ${({ scheduling, waiting, theme }) =>
         (scheduling || waiting)
             ? '#fff'
-            : '#374557'
+            :  theme.numberCalendarColor
     };   
     
     &:hover{

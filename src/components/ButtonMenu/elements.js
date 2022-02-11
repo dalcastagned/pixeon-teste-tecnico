@@ -13,7 +13,7 @@ export const Container = styled.div`
     i{
         display: flex;
         align-items: center;
-        color: ${({ active }) => active ? '#fff' : '#A098AE'};
+        color: ${({ active, theme }) => active ? '#fff' : theme.textColor};
         padding: 0 25px;
         height: 60px;
 
@@ -35,6 +35,6 @@ export const Button = styled(Link)`
     font-weight: 500;
     text-align: left;
     font-size: 18px;
-    color: ${({ active }) => active === "true" ? '#fff' : '#A098AE'};
+    color: ${({ active, theme }) => active === "true" ? '#fff' : theme.textColor};
     text-decoration: none;
 `

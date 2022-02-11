@@ -17,7 +17,7 @@ export const ContainerRight = styled.div`
 export const ContainerCalendar = styled.div`
     width: 722px;
     height: 404px;
-    background: #fff;
+    background: ${({theme}) => theme.primaryBackground};
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@ export const Title = styled.h2`
     font-weight: bold;
     font-size: 24px;
     line-height: 36px;
-    color: #374557;
+    color: ${({theme}) => theme.title};
     padding-bottom: 24px;
 `
 
@@ -50,7 +50,7 @@ export const SchedulingHeader = styled.div`
         font-weight: bold;
         font-size: 24px;
         line-height: 36px;
-        color: #374557;
+        color: ${({theme}) => theme.title};
     }
 `
 
@@ -88,7 +88,7 @@ export const TitleRange = styled.h2`
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: #A098AE;
+    color: ${({theme}) => theme.textColor};
     text-align: center;
     padding-bottom: 10px;
 `
@@ -98,7 +98,7 @@ export const InfoRange = styled.p`
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    color: #A098AE;
+    color: ${({theme}) => theme.textColor};
     padding-top: 10px;
 `
 
@@ -115,7 +115,7 @@ export const Subtitles = styled.ul`
         font-weight: normal;
         font-size: 14px;
         line-height: 21px;
-        color: #A098AE;
+        color: ${({theme}) => theme.textColor};
         display: flex;
         align-items: center;
     }
@@ -124,7 +124,7 @@ export const Subtitles = styled.ul`
 export const Circle = styled.div`
     width: 12px;
     height: 12px;
-    background: #fff;
+    background: ${({theme}) => theme.primaryBackground};
     border: 3px solid ${({color}) => color};
     border-radius: 50%;
     margin-right: 8px;

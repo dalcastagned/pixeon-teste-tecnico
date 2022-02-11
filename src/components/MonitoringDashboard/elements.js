@@ -4,7 +4,7 @@ import { ChevronRight } from '@styled-icons/boxicons-regular';
 export const Container = styled.div`
     width: 353px;
     height: 127px;
-    background: #FFFFFF;
+    background: ${({theme}) => theme.primaryBackground};
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Percentage = styled.div`
     border-radius: 50%;
-    background: ${({ color }) => color + '1a'};
+    background: ${({ color, theme }) => color + theme.opacity};
     width: 64px;
     height: 64px;
     display: flex;
@@ -25,7 +25,7 @@ export const Percentage = styled.div`
         font-weight: bold;
         font-size: 18px;
         line-height: 27px;
-        color: #374557;
+        color: ${({theme}) => theme.title};
     }
 `
 
@@ -40,7 +40,7 @@ export const Title = styled.p`
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
-    color: #374557;
+    color: ${({theme}) => theme.title};
 `
 
 export const ProgressBar = styled.div`

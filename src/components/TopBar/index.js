@@ -7,7 +7,7 @@ import { SearchBar } from '../SearchBar';
 
 import * as S from './elements';
 
-const TopBar = () => {
+const TopBar = ({ isDarkTheme, setIsDarkTheme }) => {
 
     const {
         filteredData,
@@ -16,6 +16,12 @@ const TopBar = () => {
     const { pathname } = useLocation()
     const title = (pathname === '/agendamento' ? 'Agendamento' : pathname === '/todos-agendamentos' && 'Todos os Agendamentos')
     const [showLogout, setShowLogout] = useState(false)
+    const [showThemeSelection, setShowThemeSelection] = useState(false)
+
+    const handleThemeSelection = () => {
+        setIsDarkTheme(!isDarkTheme)
+        localStorage.setItem("theme", !isDarkTheme);
+    }
 
     return (
         <S.Container>
@@ -25,13 +31,37 @@ const TopBar = () => {
                 setList={setFilteredSearch}
                 placeholder='Digite para pesquisar'
             />
-            <S.User onClick={() => setShowLogout(!showLogout)} />
-            {showLogout &&
-                < S.MenuLogout to='/'>
-                    <S.LogoutIcon />
-                    Logout
-                </S.MenuLogout>
-            }
+            <S.ContainerButtons>
+                <S.Configuration onClick={() => setShowThemeSelection(!showThemeSelection)} />
+                {showThemeSelection &&
+                    < S.MenuThemeSelection onClick={() => {
+                        handleThemeSelection()
+                        setShowThemeSelection(false)
+                    }}>
+                        {
+                            isDarkTheme
+                                ?
+                                <>
+                                    <S.LightIcon />
+                                    <p>Tema Claro</p>
+                                </>
+                                :
+                                <>
+                                    <S.DarkIcon />
+                                    <p>Tema Escuro</p>
+                                </>
+                        }
+                    </S.MenuThemeSelection>
+                }
+
+                <S.User onClick={() => setShowLogout(!showLogout)} />
+                {showLogout &&
+                    < S.MenuLogout to='/'>
+                        <S.LogoutIcon />
+                        Logout
+                    </S.MenuLogout>
+                }
+            </S.ContainerButtons>
         </S.Container >
     )
 };

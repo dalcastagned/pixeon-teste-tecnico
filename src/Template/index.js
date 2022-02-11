@@ -5,7 +5,7 @@ import SideMenu from '../components/SideMenu';
 import TopBar from '../components/TopBar';
 import * as S from './elements'
 
-const Template = ({ children }) => {
+const Template = ({ children, isDarkTheme, setIsDarkTheme}) => {
 
     const { pathname } = useLocation()
 
@@ -15,7 +15,7 @@ const Template = ({ children }) => {
         return (
             <>
                 <SideMenu />
-                <TopBar />
+                <TopBar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
                 <S.Container>
                     {children}
                 </S.Container>
