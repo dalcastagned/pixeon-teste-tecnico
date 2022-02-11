@@ -1,41 +1,23 @@
-import React, { useEffect, useState, Children } from 'react';
-import toast from 'react-hot-toast';
+import React, { Children, useContext, useEffect } from 'react';
 
-import { getInfo } from '../../services/Api';
+import { SchedulingContext } from '../../context/SchedulingItems';
 import MonitoringDashboard from '../../components/MonitoringDashboard';
 import SchedualingCard from '../../components/SchedulingCard';
 import * as S from './elements'
 
 const AllScheduling = () => {
 
-    const [scheduling, setScheduling] = useState([])
+    const {
+        filteredSearch,
+        percentageDone,
+        percentageWaiting,
+        scheduling,
+        setFilteredData
+    } = useContext(SchedulingContext)
 
-    let percentageDone = (
-        scheduling.length
-        && scheduling
-            .filter(item => item.status !== 'waiting')
-            .length
-        /
-        scheduling.length
-    ) * 100
-    let percentageWaiting = (
-        scheduling.length
-        && scheduling
-            .filter(item => item.status === 'waiting')
-            .length
-        /
-        scheduling.length
-    ) * 100
-
-    useEffect(() => {
-        getInfo("/agendamentos")
-            .then((data) => {
-                setScheduling(data)
-            })
-            .catch(() => {
-                toast.error('Erro ao buscar dados')
-            });
-    }, []);
+    useEffect(()=>{
+        setFilteredData(scheduling)
+    }, [])
 
     return (
         <S.Container>
@@ -47,12 +29,9 @@ const AllScheduling = () => {
                 </S.Monitoring>
                 <S.SchedulingHeader>
                     <h2>Listagem de Agendamentos</h2>
-                    <S.VieAllSchedualings to='/todos-agendamentos'>
-                        Visualizar Todos <S.ArrowRight />
-                    </S.VieAllSchedualings>
                 </S.SchedulingHeader>
                 <S.SchedulingList>
-                    {Children.toArray(scheduling.map(item => (
+                    {Children.toArray(filteredSearch.map(item => (
                         <SchedualingCard
                             status={item.status}
                             title={item.title}

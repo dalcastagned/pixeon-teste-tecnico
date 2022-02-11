@@ -1,8 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import * as S from "./elements"
 
 export const SearchBar = ({ sourceList, setList, placeholder }) => {
+  
+  const { pathname } = useLocation()
   const [searchValue, setSearchValue] = useState("");
   const [searchBool, setSearchBool] = useState(false);
 
@@ -16,6 +19,10 @@ export const SearchBar = ({ sourceList, setList, placeholder }) => {
     },
     [setList]
   );
+
+  useEffect(()=>{
+    setSearchValue('')
+  },[pathname])
 
   useEffect(() => {
     const filteredItems = sourceList.filter((item) => {

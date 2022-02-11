@@ -13,7 +13,6 @@ const Scheduling = () => {
     const {
         scheduling,
         filteredSearch,
-        setFilteredSearch,
         setFilteredData,
         percentageDone,
         percentageWaiting

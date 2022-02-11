@@ -18,6 +18,7 @@ export const SearchBar = styled.input`
   outline: none;
   font-size: 18px;
   line-height: 27px;
+  width: 100%;
 `
 
 export const SearchIcon = styled(Search)`
