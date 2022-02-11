@@ -1,10 +1,11 @@
 import React, { useEffect, useState, Children } from 'react';
 import toast from 'react-hot-toast';
 
+import { getInfo } from '../../services/Api';
 import MonitoringDashboard from '../../components/MonitoringDashboard';
 import SchedualingCard from '../../components/SchedulingCard';
-import { getInfo } from '../../services/Api';
 import * as S from './elements'
+import Calendar from '../../components/Calendar';
 
 const Scheduling = () => {
 
@@ -32,29 +33,37 @@ const Scheduling = () => {
 
     return (
         <S.Container>
-            <S.Title>Exames Concluídos/Andamento</S.Title>
-            <S.Monitoring>
-                <MonitoringDashboard percentage={percentageDone.toFixed(1)} color='#4CBC9A' title='Concluido' />
-                <MonitoringDashboard percentage={percentageWaiting.toFixed(1)} color='#FEC64F' title='Em Andamento' />
-            </S.Monitoring>
-            <S.SchedulingHeader>
-                <h2>Listagem de Agendamentos</h2>
-                <S.VieAllSchedualings to='/todos-agendamentos'>
-                    Visualizar Todos <S.ArrowRight />
-                </S.VieAllSchedualings>
-            </S.SchedulingHeader>
-            <S.SchedulingList>
-                {Children.toArray(scheduling.slice(0, 5).map(item => (
-                    <SchedualingCard
-                        status={item.status}
-                        title={item.title}
-                        day={item.day}
-                        initialHour={item.initialHour}
-                        finalHour={item.finalHour}
-                        description={item.description}
-                    />
-                )))}
-            </S.SchedulingList>
+            <S.ContainerLeft>
+                <S.Title>Exames Concluídos/Andamento</S.Title>
+                <S.Monitoring>
+                    <MonitoringDashboard percentage={percentageDone.toFixed(1)} color='#4CBC9A' title='Concluido' />
+                    <MonitoringDashboard percentage={percentageWaiting.toFixed(1)} color='#FEC64F' title='Em Andamento' />
+                </S.Monitoring>
+                <S.SchedulingHeader>
+                    <h2>Listagem de Agendamentos</h2>
+                    <S.VieAllSchedualings to='/todos-agendamentos'>
+                        Visualizar Todos <S.ArrowRight />
+                    </S.VieAllSchedualings>
+                </S.SchedulingHeader>
+                <S.SchedulingList>
+                    {Children.toArray(scheduling.slice(0, 5).map(item => (
+                        <SchedualingCard
+                            status={item.status}
+                            title={item.title}
+                            day={item.day}
+                            initialHour={item.initialHour}
+                            finalHour={item.finalHour}
+                            description={item.description}
+                        />
+                    )))}
+                </S.SchedulingList>
+            </S.ContainerLeft>
+            <S.ContainerRight>
+                <S.Title>Calendário</S.Title>
+                <S.ContainerCalendar>
+                    <Calendar data={scheduling} />
+                </S.ContainerCalendar>
+            </S.ContainerRight>
         </S.Container>
     )
 };

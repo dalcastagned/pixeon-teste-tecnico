@@ -11,6 +11,7 @@ export const Container = styled.div`
     left: 0;
     background: #fff;
     display: flex;
+    z-index: 999;
 
     img {
         width: 210px;

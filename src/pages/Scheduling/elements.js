@@ -3,7 +3,25 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from '@styled-icons/boxicons-regular';
 
 export const Container = styled.div`
+    display: flex;
+`
 
+export const ContainerLeft = styled.div`
+
+`
+
+export const ContainerRight = styled.div`
+    padding-left: 40px;
+`
+
+export const ContainerCalendar = styled.div`
+    width: 772px;
+    height: 404px;
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
 `
 
 export const Title = styled.h2`  
