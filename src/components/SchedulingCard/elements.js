@@ -35,6 +35,7 @@ export const Title = styled.div`
     font-size: 18px;
     line-height: 27px;
     color: #374557;
+    width: 250px;
 `
 
 export const Date = styled.div` 
