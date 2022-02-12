@@ -1,10 +1,14 @@
+import logoDark from '../images/logoDark.png'
+import logoLight from '../images/logoLight.png'
+
 export const lightTheme = {
     primaryBackground: '#fff',
     secondaryBackground: '#fafafa',
     title: '#374557',
     opacity: '1a',
     numberCalendarColor: '#A098AE',
-    textColor: '#A098AE' 
+    textColor: '#A098AE',
+    logo: logoLight
   }
   
   export const darkTheme = {
@@ -13,5 +17,6 @@ export const lightTheme = {
     title: '#fff',
     opacity: 'ff',
     numberCalendarColor: ' #fff',
-    textColor: '#fff' 
+    textColor: '#fff' ,
+    logo: logoDark
   }

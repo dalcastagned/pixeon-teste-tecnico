@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { Mail } from "@styled-icons/entypo";
 import { Lock } from "@styled-icons/boxicons-solid";
 
-import logo from '../../images/logo.png'
+import logo from '../../images/logoLight.png'
 import InputLogin from '../../components/InputLogin'
 import ButtonLogin from '../../components/ButtonLogin'
 import * as S from './elements'
