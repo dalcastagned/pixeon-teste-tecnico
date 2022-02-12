@@ -11,8 +11,6 @@ import * as S from './elements';
 
 const SideMenu = (props) => {
 
-    console.log(props.theme)
-
     const { pathname } = useLocation()
 
     return (

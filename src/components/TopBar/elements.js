@@ -1,8 +1,11 @@
 import styled from 'styled-components'
-import { LogOut } from '@styled-icons/boxicons-regular'
+import { LogOut, Error } from '@styled-icons/boxicons-regular'
 import { Link } from 'react-router-dom';
 import { GearFill, MoonFill } from '@styled-icons/bootstrap'
 import { Sun } from '@styled-icons/boxicons-solid'
+import { Notifications } from '@styled-icons/ionicons-solid'
+import { CheckmarkDone } from '@styled-icons/ionicons-sharp'
+import { MessageRoundedDetail, MessageAltEdit } from '@styled-icons/boxicons-solid'
 
 export const Container = styled.div`
     width: calc(100vw - 345px);
@@ -12,13 +15,13 @@ export const Container = styled.div`
     position: fixed;
     top: 0;
     left: 345px;
-    background: ${({theme}) => theme.primaryBackground};
+    background: ${({ theme }) => theme.primaryBackground};
     z-index: 999;   
 
     h1 {
         font-size: 36px;
         line-height: 54px;
-        color: ${({theme}) => theme.title};    
+        color: ${({ theme }) => theme.title};    
         text-align: left;
         padding-left: 40px;
         width: 355px;
@@ -85,7 +88,7 @@ export const Configuration = styled(GearFill)`
     border-radius: 16px;
     position: relative;
     cursor: pointer;
-    color: ${({theme}) => theme.textColor};
+    color: ${({ theme }) => theme.textColor};
 `
 
 export const MenuThemeSelection = styled.div`
@@ -126,4 +129,110 @@ export const LightIcon = styled(Sun)`
 export const DarkIcon = styled(MoonFill)`
     height: 20px;
     color: #fff;
+`
+
+export const Notification = styled(Notifications)`
+    width: 25px;
+    height: 25px;
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    color: ${({ theme }) => theme.textColor};
+`
+
+export const MenuNotification = styled.div`
+    height: 80px;
+    width: 250px;
+    background: #4CBC9A;
+    position: absolute;
+    top: 70px;
+    right: 110px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    flex-direction: column;
+
+    
+    ::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(670%, -95%);
+        margin-left: 60px;
+        border-width: 5px;
+        border-style: solid;
+        border-color:  transparent transparent #4CBC9A transparent;
+    }
+
+    p{
+        width: 210px;
+    }
+`
+
+export const DoneIcon = styled(CheckmarkDone)`
+    height: 20px;
+    color: #fff;
+    padding-right: 10px;
+`
+
+export const ErrorIcon = styled(Error)`
+    height: 20px;
+    color: #f00;
+    padding-right: 10px;
+`
+
+export const Message = styled(MessageRoundedDetail)`
+    width: 25px;
+    height: 25px;
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    color: ${({ theme }) => theme.textColor};
+`
+
+export const MenuMessage = styled.div`
+    height: 40px;
+    width: 250px;
+    background: #4CBC9A;
+    position: absolute;
+    top: 70px;
+    right: 175px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    flex-direction: column;
+
+    
+    ::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(670%, -95%);
+        margin-left: 60px;
+        border-width: 5px;
+        border-style: solid;
+        border-color:  transparent transparent #4CBC9A transparent;
+    }
+
+    p{
+        width: 210px;
+    }
+`
+
+export const MessageIcon = styled(MessageAltEdit)`
+    height: 20px;
+    color: #fff;
+    padding-right: 10px;
 `

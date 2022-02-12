@@ -17,6 +17,8 @@ const TopBar = ({ isDarkTheme, setIsDarkTheme }) => {
     const title = (pathname === '/agendamento' ? 'Agendamento' : pathname === '/todos-agendamentos' && 'Todos os Agendamentos')
     const [showLogout, setShowLogout] = useState(false)
     const [showThemeSelection, setShowThemeSelection] = useState(false)
+    const [showNotification, setShowNotification] = useState(false)
+    const [showMessage, setShowMessage] = useState(false)
 
     const handleThemeSelection = () => {
         setIsDarkTheme(!isDarkTheme)
@@ -32,7 +34,35 @@ const TopBar = ({ isDarkTheme, setIsDarkTheme }) => {
                 placeholder='Digite para pesquisar'
             />
             <S.ContainerButtons>
-                <S.Configuration onClick={() => setShowThemeSelection(!showThemeSelection)} />
+                <S.Message onClick={() => {
+                    setShowMessage(!showMessage)
+                    setShowNotification(false)
+                    setShowThemeSelection(false)
+                    setShowLogout(false)
+                }} />
+                {showMessage &&
+                    < S.MenuMessage>
+                        <p><S.MessageIcon />Exame 1 Realizado</p>
+                    </S.MenuMessage>
+                }
+                <S.Notification onClick={() => {
+                    setShowNotification(!showNotification)
+                    setShowMessage(false)
+                    setShowThemeSelection(false)
+                    setShowLogout(false)
+                }} />
+                {showNotification &&
+                    < S.MenuNotification>
+                        <p><S.DoneIcon />Agendamento Concluído</p>
+                        <p><S.ErrorIcon />Agendamento com Erro</p>
+                    </S.MenuNotification>
+                }
+                <S.Configuration onClick={() => {
+                    setShowThemeSelection(!showThemeSelection)
+                    setShowMessage(false)
+                    setShowNotification(false)
+                    setShowLogout(false)
+                }} />
                 {showThemeSelection &&
                     < S.MenuThemeSelection onClick={() => {
                         handleThemeSelection()
@@ -54,7 +84,12 @@ const TopBar = ({ isDarkTheme, setIsDarkTheme }) => {
                     </S.MenuThemeSelection>
                 }
 
-                <S.User onClick={() => setShowLogout(!showLogout)} />
+                <S.User onClick={() => {
+                    setShowLogout(!showLogout)
+                    setShowMessage(false)
+                    setShowNotification(false)
+                    setShowThemeSelection(false)
+                }} />
                 {showLogout &&
                     < S.MenuLogout to='/'>
                         <S.LogoutIcon />

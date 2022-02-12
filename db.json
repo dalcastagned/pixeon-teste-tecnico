@@ -1,6 +1,38 @@
 {
     "agendamentos": [
         {
+            "status": "error",
+            "title": "Exames do servidor CAA",
+            "day": "2021-01-02",
+            "initialHour": "08",
+            "finalHour": "10",
+            "description": "Nesse Agendamento contem todos os exames do tipo CAA"
+        },
+        {
+            "status": "error",
+            "title": "Exames do servidor AAA",
+            "day": "2021-01-03",
+            "initialHour": "08",
+            "finalHour": "10",
+            "description": "Nesse Agendamento contem todos os exames do tipo AAA"
+        },
+        {
+            "status": "waiting",
+            "title": "Exames do servidor AA",
+            "day": "2021-01-03",
+            "initialHour": "12",
+            "finalHour": "14",
+            "description": "Nesse Agendamento contem todos os exames do tipo AA"
+        },
+        {
+            "status": "error",
+            "title": "Exames do servidor BAA",
+            "day": "2021-01-05",
+            "initialHour": "08",
+            "finalHour": "10",
+            "description": "Nesse Agendamento contem todos os exames do tipo BAA"
+        },
+        {
             "status": "done",
             "title": "Exames do servidor A",
             "day": "2021-01-05",
@@ -10,11 +42,11 @@
         },
         {
             "status": "waiting",
-            "title": "Exames do servidor AA",
-            "day": "2021-01-03",
-            "initialHour": "12",
-            "finalHour": "14",
-            "description": "Nesse Agendamento contem todos os exames do tipo AA"
+            "title": "Exames do servidor BA",
+            "day": "2021-01-05",
+            "initialHour": "13",
+            "finalHour": "15",
+            "description": "Nesse Agendamento contem todos os exames do tipo BA"
         },
         {
             "status": "done",
@@ -26,27 +58,11 @@
         },
         {
             "status": "error",
-            "title": "Exames do servidor FAA",
-            "day": "2021-01-13",
+            "title": "Exames do servidor DAA",
+            "day": "2021-01-09",
             "initialHour": "08",
             "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo FAA"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor C",
-            "day": "2021-01-23",
-            "initialHour": "08",
-            "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo C"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor D",
-            "day": "2021-01-24",
-            "initialHour": "13",
-            "finalHour": "15",
-            "description": "Nesse Agendamento contem todos os exames do tipo D"
+            "description": "Nesse Agendamento contem todos os exames do tipo DAA"
         },
         {
             "status": "done",
@@ -57,12 +73,44 @@
             "description": "Nesse Agendamento contem todos os exames do tipo E"
         },
         {
+            "status": "waiting",
+            "title": "Exames do servidor EA",
+            "day": "2021-01-09",
+            "initialHour": "16",
+            "finalHour": "18",
+            "description": "Nesse Agendamento contem todos os exames do tipo EA"
+        },
+        {
+            "status": "error",
+            "title": "Exames do servidor EAA",
+            "day": "2021-01-10",
+            "initialHour": "08",
+            "finalHour": "10",
+            "description": "Nesse Agendamento contem todos os exames do tipo EAA"
+        },
+        {
             "status": "done",
             "title": "Exames do servidor F",
             "day": "2021-01-10",
             "initialHour": "09",
             "finalHour": "11",
             "description": "Nesse Agendamento contem todos os exames do tipo F"
+        },
+        {
+            "status": "waiting",
+            "title": "Exames do servidor FA",
+            "day": "2021-01-10",
+            "initialHour": "11",
+            "finalHour": "13",
+            "description": "Nesse Agendamento contem todos os exames do tipo FA"
+        },
+        {
+            "status": "waiting",
+            "title": "Exames do servidor HA",
+            "day": "2021-01-10",
+            "initialHour": "12",
+            "finalHour": "14",
+            "description": "Nesse Agendamento contem todos os exames do tipo HA"
         },
         {
             "status": "done",
@@ -81,68 +129,12 @@
             "description": "Nesse Agendamento contem todos os exames do tipo H"
         },
         {
-            "status": "done",
-            "title": "Exames do servidor I",
-            "day": "2021-01-13",
-            "initialHour": "08",
-            "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo I"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor J",
-            "day": "2021-01-27",
-            "initialHour": "10",
-            "finalHour": "12",
-            "description": "Nesse Agendamento contem todos os exames do tipo J"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor K",
-            "day": "2021-01-26",
-            "initialHour": "09",
-            "finalHour": "11",
-            "description": "Nesse Agendamento contem todos os exames do tipo K"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor L",
-            "day": "2021-01-26",
+            "status": "waiting",
+            "title": "Exames do servidor GA",
+            "day": "2021-01-10",
             "initialHour": "15",
             "finalHour": "17",
-            "description": "Nesse Agendamento contem todos os exames do tipo L"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor M",
-            "day": "2021-01-17",
-            "initialHour": "07",
-            "finalHour": "09",
-            "description": "Nesse Agendamento contem todos os exames do tipo M"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor N",
-            "day": "2021-01-17",
-            "initialHour": "10",
-            "finalHour": "12",
-            "description": "Nesse Agendamento contem todos os exames do tipo N"
-        },
-        {
-            "status": "done",
-            "title": "Exames do servidor O",
-            "day": "2021-01-17",
-            "initialHour": "14",
-            "finalHour": "16",
-            "description": "Nesse Agendamento contem todos os exames do tipo O"
-        },
-        {
-            "status": "waiting",
-            "title": "Exames do servidor BA",
-            "day": "2021-01-05",
-            "initialHour": "13",
-            "finalHour": "15",
-            "description": "Nesse Agendamento contem todos os exames do tipo BA"
+            "description": "Nesse Agendamento contem todos os exames do tipo GA"
         },
         {
             "status": "waiting",
@@ -161,36 +153,20 @@
             "description": "Nesse Agendamento contem todos os exames do tipo DA"
         },
         {
-            "status": "waiting",
-            "title": "Exames do servidor EA",
-            "day": "2021-01-09",
-            "initialHour": "16",
-            "finalHour": "18",
-            "description": "Nesse Agendamento contem todos os exames do tipo EA"
+            "status": "error",
+            "title": "Exames do servidor FAA",
+            "day": "2021-01-13",
+            "initialHour": "08",
+            "finalHour": "10",
+            "description": "Nesse Agendamento contem todos os exames do tipo FAA"
         },
         {
-            "status": "waiting",
-            "title": "Exames do servidor FA",
-            "day": "2021-01-10",
-            "initialHour": "11",
-            "finalHour": "13",
-            "description": "Nesse Agendamento contem todos os exames do tipo FA"
-        },
-        {
-            "status": "waiting",
-            "title": "Exames do servidor GA",
-            "day": "2021-01-10",
-            "initialHour": "15",
-            "finalHour": "17",
-            "description": "Nesse Agendamento contem todos os exames do tipo GA"
-        },
-        {
-            "status": "waiting",
-            "title": "Exames do servidor HA",
-            "day": "2021-01-10",
-            "initialHour": "12",
-            "finalHour": "14",
-            "description": "Nesse Agendamento contem todos os exames do tipo HA"
+            "status": "done",
+            "title": "Exames do servidor I",
+            "day": "2021-01-13",
+            "initialHour": "08",
+            "finalHour": "10",
+            "description": "Nesse Agendamento contem todos os exames do tipo I"
         },
         {
             "status": "waiting",
@@ -209,20 +185,20 @@
             "description": "Nesse Agendamento contem todos os exames do tipo JA"
         },
         {
-            "status": "waiting",
-            "title": "Exames do servidor KA",
-            "day": "2021-01-26",
-            "initialHour": "08",
-            "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo KA"
+            "status": "done",
+            "title": "Exames do servidor M",
+            "day": "2021-01-17",
+            "initialHour": "07",
+            "finalHour": "09",
+            "description": "Nesse Agendamento contem todos os exames do tipo M"
         },
         {
-            "status": "waiting",
-            "title": "Exames do servidor LA",
-            "day": "2021-01-26",
-            "initialHour": "13",
-            "finalHour": "15",
-            "description": "Nesse Agendamento contem todos os exames do tipo LA"
+            "status": "done",
+            "title": "Exames do servidor O",
+            "day": "2021-01-17",
+            "initialHour": "14",
+            "finalHour": "16",
+            "description": "Nesse Agendamento contem todos os exames do tipo O"
         },
         {
             "status": "waiting",
@@ -231,6 +207,14 @@
             "initialHour": "09",
             "finalHour": "11",
             "description": "Nesse Agendamento contem todos os exames do tipo MA"
+        },
+        {
+            "status": "done",
+            "title": "Exames do servidor N",
+            "day": "2021-01-17",
+            "initialHour": "10",
+            "finalHour": "12",
+            "description": "Nesse Agendamento contem todos os exames do tipo N"
         },
         {
             "status": "waiting",
@@ -249,44 +233,28 @@
             "description": "Nesse Agendamento contem todos os exames do tipo AO"
         },
         {
-            "status": "error",
-            "title": "Exames do servidor AAA",
-            "day": "2021-01-03",
+            "status": "done",
+            "title": "Exames do servidor C",
+            "day": "2021-01-23",
             "initialHour": "08",
             "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo AAA"
+            "description": "Nesse Agendamento contem todos os exames do tipo C"
         },
         {
-            "status": "error",
-            "title": "Exames do servidor BAA",
-            "day": "2021-01-05",
-            "initialHour": "08",
-            "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo BAA"
+            "status": "done",
+            "title": "Exames do servidor D",
+            "day": "2021-01-24",
+            "initialHour": "13",
+            "finalHour": "15",
+            "description": "Nesse Agendamento contem todos os exames do tipo D"
         },
         {
-            "status": "error",
-            "title": "Exames do servidor CAA",
-            "day": "2021-01-02",
+            "status": "waiting",
+            "title": "Exames do servidor KA",
+            "day": "2021-01-26",
             "initialHour": "08",
             "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo CAA"
-        },
-        {
-            "status": "error",
-            "title": "Exames do servidor DAA",
-            "day": "2021-01-09",
-            "initialHour": "08",
-            "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo DAA"
-        },
-        {
-            "status": "error",
-            "title": "Exames do servidor EAA",
-            "day": "2021-01-10",
-            "initialHour": "08",
-            "finalHour": "10",
-            "description": "Nesse Agendamento contem todos os exames do tipo EAA"
+            "description": "Nesse Agendamento contem todos os exames do tipo KA"
         },
         {
             "status": "error",
@@ -295,6 +263,38 @@
             "initialHour": "08",
             "finalHour": "10",
             "description": "Nesse Agendamento contem todos os exames do tipo GAA"
+        },
+        {
+            "status": "done",
+            "title": "Exames do servidor K",
+            "day": "2021-01-26",
+            "initialHour": "09",
+            "finalHour": "11",
+            "description": "Nesse Agendamento contem todos os exames do tipo K"
+        },
+        {
+            "status": "waiting",
+            "title": "Exames do servidor LA",
+            "day": "2021-01-26",
+            "initialHour": "13",
+            "finalHour": "15",
+            "description": "Nesse Agendamento contem todos os exames do tipo LA"
+        },
+        {
+            "status": "done",
+            "title": "Exames do servidor L",
+            "day": "2021-01-26",
+            "initialHour": "15",
+            "finalHour": "17",
+            "description": "Nesse Agendamento contem todos os exames do tipo L"
+        },
+        {
+            "status": "done",
+            "title": "Exames do servidor J",
+            "day": "2021-01-27",
+            "initialHour": "10",
+            "finalHour": "12",
+            "description": "Nesse Agendamento contem todos os exames do tipo J"
         }
     ]
 }
