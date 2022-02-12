@@ -12,6 +12,7 @@
 
 ## Observações
 <p align="left">Projeto feito para monitores de 1920x1080 ou superiores!</p>
+<p align="left">Para login, basta adicionar um email válido e uma senha de pelo menos 6 dígitos</p>
 
 
 ## Instalação
