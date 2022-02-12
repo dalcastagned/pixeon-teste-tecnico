@@ -1,5 +1,7 @@
 import logoDark from '../images/logoDark.png'
 import logoLight from '../images/logoLight.png'
+import avatarDark from '../images/avatarDark.png'
+import avatarLight from '../images/avatarLight.png'
 
 export const lightTheme = {
     primaryBackground: '#fff',
@@ -8,7 +10,8 @@ export const lightTheme = {
     opacity: '1a',
     numberCalendarColor: '#A098AE',
     textColor: '#A098AE',
-    logo: logoLight
+    logo: logoLight,
+    avatar: avatarLight
   }
   
   export const darkTheme = {
@@ -18,5 +21,6 @@ export const lightTheme = {
     opacity: 'ff',
     numberCalendarColor: ' #fff',
     textColor: '#fff' ,
-    logo: logoDark
+    logo: logoDark,
+    avatar: avatarDark
   }

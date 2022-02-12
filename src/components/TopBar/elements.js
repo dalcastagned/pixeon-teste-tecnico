@@ -40,7 +40,8 @@ export const ContainerButtons = styled.div`
 export const User = styled.div`
     width: 60px;
     height: 60px;
-    background: #DBDBDB;
+    background: ${({ theme }) => `url(${theme.avatar})`};
+    background-size: contain;
     border-radius: 16px;
     margin-right: 50px;
     position: relative;
@@ -62,7 +63,6 @@ export const MenuLogout = styled(Link)`
     gap: 8px;
     text-decoration: none;
 
-    
     ::after {
         content: "";
         position: absolute;
