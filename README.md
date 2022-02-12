@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+<h1 align="center">Bem-Vindo(a) ao projeto Agendamento Pixeon 👋</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+    <img src='https://github.com/dalcastagned/pixeon/blob/main/src/images/Preview.gif'>
+</p>
 
-## Available Scripts
+## Descrição do Projeto
+<p align="left">Projeto realizado como teste técnico para processo seletivo na empresa Pixeon</p>
 
-In the project directory, you can run:
+## Requisitos da Aplicação
+<p align="left">Seguir documentação fornecida no link: https://github.com/Pixeon/frontend-challenge</p>
 
-### `npm start`
+## Observações
+<p align="left">Projeto feito para monitores de 1920x1080 ou superiores!</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalação
 
-### `npm test`
+```sh
+npm install
+```
+## Inicialização
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm start
+```
+## Uso
 
-### `npm run build`
+```sh
+Abra http://localhost:3000 para visualizar no seu browser
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Tecnologias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As seguintes ferramentas foram usadas na construção do projeto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://pt-br.reactjs.org/)
+- [React-Router-Dom](https://v5.reactrouter.com/web/guides/quick-start)
+- [MomentJS](https://momentjs.com/)
+- [Styled-Components](https://styled-components.com/)
+- [Styled-Components Icons](https://styled-icons.dev/)
+- [JSON-Server](https://www.npmjs.com/package/json-server)
+- [Axios](https://axios-http.com/docs/intro)
+- [React-Hot-Toast](https://react-hot-toast.com/)
+## Autor
 
-### `npm run eject`
+<a href="https://github.com/dalcastagned">
+ <img src="https://avatars.githubusercontent.com/u/65626347?v=4" width="100px;"/>
+ <br />
+ <sub><b>Daniel Dalcastagne</b></sub></a> <a href="https://github.com/dalcastagned">🚀</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Feito com ❤️ por Daniel Dalcastagne 👋🏽 Entre em contato!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Linkedin Badge](https://img.shields.io/badge/-LINKEDIN-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/daniel-dalcastagne-4baa00179/)](https://www.linkedin.com/in/daniel-dalcastagne-4baa00179/) 
+[![Gmail Badge](https://img.shields.io/badge/-EMAIL-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:contato@danieldalcastagne.com)](mailto:contato@danieldalcastagne.com)
